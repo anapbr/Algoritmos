@@ -4,49 +4,53 @@ public class CalculaPolinomio2 {
 
 	public static void main(String[] args) {
 
-		float[] A = {2, 3, 1};
-		
-		System.out.println(calcularPolinomio(A, 2));
-		
+		float[] A = { 2, 3, 1 };
+
+		System.out.println(calcularPolinomio(A, 2)[0]);
+
 	}
 
-	public static float calcularPolinomio(float[] A, float x) {
+	public static float[] calcularPolinomio(float[] A, float x) {
 
 		int n = A.length;
+		float xn;
 		float P;
 		
-		// Quando restar apenas o último coeficiente, 
-		// APENAS RETORNA (não é necessário multiplicar - grau de x = 0)
+		// retorno = PLinha, xLinha
+		float[] retorno = new float[2];
+
 		if (n == 1) {
-			P = A[0];
+			retorno[0]=A[0]; //P
+			retorno[1]=1;    //xn
+			return retorno;
 		} else {
 
-			// Elimina recursivamente o primeiro coeficiente da matriz 
+			// Elimina recursivamente o primeiro coeficiente da matriz
 			// até que reste apenas um
-			float[] ALinha = new float[n-1];
-			
+			float[] ALinha = new float[n - 1];
+
 			// n termos, grau do polinômio n-1
 			// Meio de eliminar o elemento de grau n-1
 			for (int i = 0; i < ALinha.length; i++) {
-				ALinha[i] = A[i+1];
-			}			
-			
-			float PLinha = calcularPolinomio(ALinha, x);
-			
-			float xn = 1;
-			
-			for (int i = 1; i <= ALinha.length; i++) {
-				xn = xn * x;
+				ALinha[i] = A[i + 1];
 			}
 			
-			//O elemento A[n] fica na posicao A[0]
-			System.out.println("A[n-1]="+A[0] + " xn="+xn);
+			retorno = calcularPolinomio(ALinha, x);
 			
-			P = PLinha + A[0] * xn;
+			float PLinha = retorno[0];
+			float xLinha = retorno[1];
 			
-		}
+			xn = x * xLinha;
 
-		return P;
+			// A[0] = a de grau n
+			P = PLinha + A[0] * xn;
+
+		}
+		
+		retorno[0] = P;
+		retorno[1] = xn;
+		
+		return retorno;
 	}
 
 }

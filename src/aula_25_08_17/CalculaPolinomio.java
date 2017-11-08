@@ -40,7 +40,6 @@ public class CalculaPolinomio {
 			}
 			
 			//O elemento A[n] fica na posicao A[0]
-			
 			System.out.println("A[n-1]="+A[0] + " xn="+xn);
 			
 			P = PLinha + A[0] * xn;
