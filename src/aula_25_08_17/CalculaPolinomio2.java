@@ -19,6 +19,8 @@ public class CalculaPolinomio2 {
 		// retorno = PLinha, xLinha
 		float[] retorno = new float[2];
 
+		// Quando restar apenas o último coeficiente, 
+		// APENAS RETORNA (não é necessário multiplicar - grau de x = 0)
 		if (n == 1) {
 			retorno[0]=A[0]; //P
 			retorno[1]=1;    //xn
