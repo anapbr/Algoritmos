@@ -57,8 +57,9 @@ public class OrdenaPorInsercao {
 				//Troca a posição avaliada com a chave
 				A[i+1]=A[i];
 				i--;
-				A[i+1]=chave;
 			}
+
+			A[i+1]=chave;
 
 			// --------------------------------------------------------------------- //
 			// IMPRESSAO AUXILIAR                                                    //
