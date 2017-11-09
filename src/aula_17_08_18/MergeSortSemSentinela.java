@@ -3,7 +3,7 @@
  *
  */
 
-package aula_18_08_17;
+package aula_17_08_18;
 
 public class MergeSortSemSentinela {
 
