@@ -19,27 +19,12 @@ public class QuickSort {
 
 	public static int[] quickSort (int[] A, int p, int r) {
 		if (p < r) {
-			int q = particione(A, p, r);
+			int q = Auxiliar.particione(A, p, r);
 			quickSort(A, p, q-1);
 			quickSort(A, q + 1,r);
 		}
 		
 		return A;
-	}
-	public static int particione (int[] A, int p, int r) {
-
-		int x = A[r]; // x é o pivô
-		int i = p-1;
-		for (int j=p; j< r; j++) {
-			if (A[j] <= x) {
-				i++;
-				Auxiliar.troca(A, i, j);
-			}
-			
-		}
-		Auxiliar.troca (A, i+1, r);
-		return i+1;
-		
 	}
 
 }

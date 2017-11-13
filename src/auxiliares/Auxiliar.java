@@ -1,5 +1,7 @@
 package auxiliares;
 
+import java.util.Random;
+
 public class Auxiliar {
 
 
@@ -22,4 +24,33 @@ public class Auxiliar {
         A[j] = aux;
     }
 	
+    // Divide o vetor em duas partes iguais
+	public static int particione (int[] A, int p, int r) {
+
+		int x = A[r]; // x é o pivô
+		int i = p-1;
+		for (int j=p; j< r; j++) {
+			if (A[j] <= x) {
+				i++;
+				Auxiliar.troca(A, i, j);
+			}
+			
+		}
+		Auxiliar.troca (A, i+1, r);
+		return i+1;
+		
+	}
+
+	// Divide o vetor em duas partes delimitadas pelo pivô aleatoriamente selecionado
+	public static int particioneAleatorio(int[] A, int p, int r) {
+
+		Random random = new Random();
+		
+		int i = p + (Math.abs(random.nextInt()) % (r-p+1));
+		
+		Auxiliar.troca(A, i, r);
+
+		return Auxiliar.particione(A, p, r);
+	}
+
 }

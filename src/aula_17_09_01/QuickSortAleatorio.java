@@ -1,7 +1,5 @@
 package aula_17_09_01;
 
-import java.util.Random;
-
 import auxiliares.Auxiliar;
 
 public class QuickSortAleatorio {
@@ -23,39 +21,12 @@ public class QuickSortAleatorio {
 	public static int[] quickSortAleatorio (int[] A, int p, int r) {
 		
 		if (p < r) {
-			int q = particioneAleatorio(A, p, r);
+			int q = Auxiliar.particioneAleatorio(A, p, r);
 			quickSortAleatorio(A, p, q-1);
 			quickSortAleatorio(A, q+1, r);	
 		}
 		
 		return A;
-	}
-
-	private static int particioneAleatorio(int[] A, int p, int r) {
-
-		Random random = new Random();
-		
-		int i = p + (Math.abs(random.nextInt()) % (r-p+1));
-		
-		Auxiliar.troca(A, i, r);
-
-		return particione (A, p, r);
-	}
-	
-	public static int particione (int[] A, int p, int r) {
-
-		int x = A[r]; // x é o pivô
-		int i = p-1;
-		for (int j=p; j< r; j++) {
-			if (A[j] <= x) {
-				i++;
-				Auxiliar.troca(A, i, j);
-			}
-			
-		}
-		Auxiliar.troca (A, i+1, r);
-		return i+1;
-		
 	}
 	
 }

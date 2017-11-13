@@ -43,7 +43,7 @@ public class HeapSort {
 
 	}
 
-    private static void heapSort(int A[], int n) {
+    public static void heapSort(int A[], int n) {
         buildMaxHeap(A, n);                      
         int m = n + 1;                          
         for (int i = n; i >= 0; i--) {          
