@@ -3,7 +3,11 @@ package aula_17_09_01;
 public class ExponenciacaoDC {
 
 	public static void main(String[] args) {
-		System.out.println(exponenciacaoDC(2.5, 3));
+		
+		double base = 2.5;
+		int expoente = 3; 
+		
+		System.out.println(base + " elevado a " + expoente + " é igual a " + exponenciacaoDC(base, expoente));
 	}
 
 	public static double exponenciacaoDC (double a, int n) {

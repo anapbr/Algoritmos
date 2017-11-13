@@ -5,28 +5,25 @@
 
 package aula_17_08_18;
 
+import auxiliares.Auxiliar;
+
 public class MergeSortComSentinela {
 
 		public static void main(String[] args) {
 			int A[] = {22,33,55,77,99,11,44,66,88};
 			
-			int i=0;
 			System.out.print("ENTRADA..: ");
-			while (i<A.length) {
-				System.out.print(A[i++] + " ");	
-			}
-			
+			Auxiliar.imprimeVetor(A);
+
 			System.out.println();
 			
 			//Apesar de haver n elementos, r é o ÍNDICE, logo, n-1 é a sua posição!
 			int n = A.length - 1;
 			mergeSort(A, 0, n);
 			
-			i=0;
 			System.out.print("\n\nSAÍDA....: ");
-			while (i<A.length) {
-				System.out.print(A[i++] + " ");	
-			}
+			Auxiliar.imprimeVetor(A);
+
 		}
 
 		public static void mergeSort(int[] A, int p, int r) {

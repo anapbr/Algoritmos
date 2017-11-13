@@ -4,8 +4,12 @@ public class Exponenciacao {
 
 	public static void main(String[] args) {
 		
-		System.out.println(exponenciacao(2.5, 3));
+		double base = 2.5;
+		int expoente = 3; 
+		
+		System.out.println(base + " elevado a " + expoente + " é igual a " + exponenciacao(base, expoente));
 
+		
 	}
 	
 	public static double exponenciacao (double a, int n) {

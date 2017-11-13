@@ -1,14 +1,19 @@
 package aula_17_09_01;
 
+import auxiliares.Auxiliar;
+
 public class BuscaBinaria {
 
 	public static void main(String[] args) {
 		
+		System.out.print("ENTRADA: ");
 		int[] A = {2, 5, 7, 8, 9};
 		int x = 9;
 		
-		System.out.println("A possui "+ A.length + " posições, identificadas de 0 até "+ (A.length-1) +".");
-		System.out.println("x encontra-se na posição "+ buscaBinaria(A, 0, 4, x)+".");
+		Auxiliar.imprimeVetor(A);
+
+		System.out.println("\n\n'A' possui "+ A.length + " posições, identificadas de 0 até "+ (A.length-1) +".");
+		System.out.println("'x'=["+x+"] encontra-se na posição "+ buscaBinaria(A, 0, 4, x)+".");
 	}
 	
 	public static int buscaBinaria (int[] A, int e, int d, int x) {

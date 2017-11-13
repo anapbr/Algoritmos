@@ -2,25 +2,21 @@ package aula_17_09_01;
 
 import java.util.Random;
 
+import auxiliares.Auxiliar;
+
 public class QuickSortAleatorio {
 
 	public static void main(String[] args) {
 
 		int A[] = {99,35,20,25,40,44,55,38,10,65,50};
 		
-		int i=0;
 		System.out.print("ENTRADA..: ");
-		while (i<A.length) {
-			System.out.print(A[i++] + " ");	
-		}
+		Auxiliar.imprimeVetor(A);
 		
 		A = quickSortAleatorio(A, 0, A.length-1);
 		
-		i=0;
 		System.out.print("\nSAÍDA....: ");
-		while (i<A.length) {
-			System.out.print(A[i++] + " ");	
-		}
+		Auxiliar.imprimeVetor(A);
 
 	}
 
@@ -41,7 +37,7 @@ public class QuickSortAleatorio {
 		
 		int i = p + (Math.abs(random.nextInt()) % (r-p+1));
 		
-		troca(A, i, r);
+		Auxiliar.troca(A, i, r);
 
 		return particione (A, p, r);
 	}
@@ -53,25 +49,13 @@ public class QuickSortAleatorio {
 		for (int j=p; j< r; j++) {
 			if (A[j] <= x) {
 				i++;
-				troca(A, i, j);
+				Auxiliar.troca(A, i, j);
 			}
 			
 		}
-		troca (A, i+1, r);
+		Auxiliar.troca (A, i+1, r);
 		return i+1;
 		
 	}
-	
-    /**
-     * Realiza a troca de posição de dois elementos do vetor.
-     * @param A Vetor que contem os dados
-     * @param i Primeira posição de troca
-     * @param j Segunda posição de troca
-     */
-    public static void troca(int[] A, int i, int j) {
-        int aux = A[i];
-        A[i] = A[j];
-        A[j] = aux;
-    }
 	
 }

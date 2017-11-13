@@ -1,15 +1,18 @@
 package aula_17_09_01;
 
+import auxiliares.Auxiliar;
+
 public class ConverteBinario {
 
 	public static void main(String[] args) {
 
-		int[] resultado = converterBinario(10);
+		int decimal = 10;
+		int[] resultado = converterBinario(decimal);
 		
-		for (int i=0; i<resultado.length; i++) {
-			System.out.print(resultado[i]);	
-		}
+		System.out.print(decimal + " convertido em binário é igual a ");
 		
+		Auxiliar.imprimeVetor(resultado);
+
 		
 	}
 	

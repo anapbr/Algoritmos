@@ -1,5 +1,7 @@
 package aula_17_09_15;
 
+import auxiliares.Auxiliar;
+
 public class HeapSort {
 
 	/*
@@ -29,7 +31,7 @@ public class HeapSort {
 		int n = A.length;
 		
 		System.out.print("ENTRADA....: ");
-		imprimeVetor(A);
+		Auxiliar.imprimeVetor(A);
 
 		// n representa o número de elementos
 		// Logo, o índice deve variar de 0 a n-1 elementos.
@@ -37,7 +39,7 @@ public class HeapSort {
 		heapSort(A, n-1);
 
 		System.out.print("\nSAÍDA......: ");
-		imprimeVetor(A);
+		Auxiliar.imprimeVetor(A);
 
 	}
 
@@ -81,7 +83,7 @@ public class HeapSort {
 		if (maior != i) {
 			troca(A, i, maior);
 			System.out.println("\nn="+n);
-			imprimeVetor(A);
+			Auxiliar.imprimeVetor(A);
 			maxHeapify(A, n, maior);
 		}
 	}
@@ -91,14 +93,6 @@ public class HeapSort {
 		int auxAI = A[i];
 		A[i] = A[j];
 		A[j] = auxAI;
-	}
-
-	/* Método auxiliar */
-	private static void imprimeVetor (int[] A) {
-		int j = 0;
-		while (j < A.length) {
-			System.out.print(A[j++] + " ");
-		}
 	}
 	
 }

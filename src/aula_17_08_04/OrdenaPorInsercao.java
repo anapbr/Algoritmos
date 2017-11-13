@@ -16,17 +16,16 @@
 
 package aula_17_08_04;
 
+import auxiliares.Auxiliar;
+
 public class OrdenaPorInsercao {
 
 	public static void main(String[] args) {
 		
 		int A[] = {99,35,20,25,40,44,55,38,10,65,50};
 		
-		int i=0;
 		System.out.print("ENTRADA..: ");
-		while (i<A.length) {
-			System.out.print(A[i++] + " ");	
-		}
+		Auxiliar.imprimeVetor(A);
 		
 		int n = A.length;
 		
@@ -34,11 +33,8 @@ public class OrdenaPorInsercao {
 		
 		A = ordenaPorInsercao(A, n);
 		
-		i=0;
 		System.out.print("\n\nSAÍDA....: ");
-		while (i<A.length) {
-			System.out.print(A[i++] + " ");	
-		}
+		Auxiliar.imprimeVetor(A);
 	}
 
 	public static int[] ordenaPorInsercao(int[] A, int n) {
@@ -60,15 +56,8 @@ public class OrdenaPorInsercao {
 			}
 
 			A[i+1]=chave;
-
-			// --------------------------------------------------------------------- //
-			// IMPRESSAO AUXILIAR                                                    //
-			// --------------------------------------------------------------------- //
-			int u=0;
-			while (u<A.length) {
-				System.out.print(A[u++] + " ");	
-			}
-			// --------------------------------------------------------------------- //
+			
+			Auxiliar.imprimeVetor(A);
 		}
 		
 		return A;
