@@ -7,8 +7,8 @@ public class SubgrafoMaximal {
 
 	}
 	
-	public static SubgrafoMaximal(G, k) {
-		if(n<k+1) {
+//	public static void subgrafoMaximal(G, k) {
+	/*	if(n<k+1) {
 			H = null;
 		} else {
 			if (todo vertice de G tem grau >= k) {
@@ -18,9 +18,10 @@ public class SubgrafoMaximal {
 				H = SubgrafoMaximal(G - v, k);
 			}
 		}
-		
-		return H;
+		*/
+		//return H;
 	
-	}
+//	}
 	
 }
+

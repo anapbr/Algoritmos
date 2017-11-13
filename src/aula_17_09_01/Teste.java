@@ -2,7 +2,7 @@ package aula_17_09_01;
 
 import java.util.Random;
 
-public class Principal {
+public class Teste {
 
 	public static void main(String[] args) {
 		
